@@ -71,7 +71,7 @@ export function App() {
         };
 
         try {
-            const response = await fetch('http://localhost:8080/user/CrearReservacion', {
+            const response = await fetch('https://invitacionsamy-72bcea589ccc.herokuapp.com/user/CrearReservacion', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
