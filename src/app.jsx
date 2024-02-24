@@ -61,7 +61,7 @@ export function App() {
             <section style={{
                 position: 'relative',
                 backgroundColor: '#c2b49a',
-                backgroundImage: 'url("src/assets/a9e4732d4bbc228fc2abc2206f84f5cb.png")',
+                backgroundImage: 'url("/assets/a9e4732d4bbc228fc2abc2206f84f5cb.png")',
                 backgroundSize: "2500px 2500px",
                 scrollSnapAlign: 'start',
                 height: '100vh',
@@ -80,7 +80,7 @@ export function App() {
                 }}>Reserva esta fecha</AnimatedText>
             </section>
             <section style={{
-                backgroundImage: 'url("src/assets/marco-flor-margarita-sobre-fondo-verde-claro_53876-101005.png")',
+                backgroundImage: 'url("/assets/marco-flor-margarita-sobre-fondo-verde-claro_53876-101005.png")',
                 scrollSnapAlign: 'start',
                 backgroundSize: 'cover',
                 height: '100vh',
@@ -115,7 +115,7 @@ export function App() {
             </section>
             <section style={{
                 scrollSnapAlign: 'start',
-                backgroundImage: 'url(src/assets/pngtree-beige-daisy-flower-page-border-image_13368886.jpg)',
+                backgroundImage: 'url(/assets/pngtree-beige-daisy-flower-page-border-image_13368886.jpg)',
                 backgroundSize: 'cover',
                 height: '100vh',
                 display: 'flex',
@@ -153,7 +153,7 @@ export function App() {
                 >4 P.M</AnimatedText>
             </section>
             <section style={{
-                backgroundImage: 'url(src/assets/floral-daisy-flower-page-border-vector.jpg)',
+                backgroundImage: 'url(/assets/floral-daisy-flower-page-border-vector.jpg)',
                 scrollSnapAlign: 'start',
                 height: '100vh',
                 display: 'flex',
@@ -197,7 +197,7 @@ export function App() {
             </section>
             <section style={{
                 scrollSnapAlign: 'start',
-                backgroundImage: 'url(src/assets/eff9eff37e75bc1d9b472ba3a4bde300.jpg)',
+                backgroundImage: 'url(/assets/eff9eff37e75bc1d9b472ba3a4bde300.jpg)',
                 backgroundSize: 'cover',
                 height: '100vh',
                 display: 'flex',
@@ -242,7 +242,7 @@ export function App() {
             </section>
             <section style={{
                 scrollSnapAlign: 'start',
-                backgroundImage: 'url(src/assets/linda-flor-de-margarida-de-camomila-em-fundo-de-pessego-neutro-conceito-floral-minimalista-com-espac.png)',
+                backgroundImage: 'url(/assets/linda-flor-de-margarida-de-camomila-em-fundo-de-pessego-neutro-conceito-floral-minimalista-com-espac.png)',
                 backgroundSize: 'cover',
                 height: '100vh',
                 flexDirection: 'column', // Cambio clave aquí
@@ -274,7 +274,7 @@ export function App() {
                 scrollSnapAlign: 'start',
                 height: '100vh',
                 display: 'flex',
-                backgroundImage: 'url(src/assets/fa53756e475e2359d7b9e1f76d43acd2.jpg)',
+                backgroundImage: 'url(/assets/fa53756e475e2359d7b9e1f76d43acd2.jpg)',
                 backgroundSize: 'cover',
                 flexDirection: 'column', // Cambio clave aquí
                 justifyContent: 'center',
