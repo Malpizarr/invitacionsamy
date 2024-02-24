@@ -299,6 +299,7 @@ export function App() {
             }}>
                 <h1
                     style={{
+                        paddingTop: '50px',
                         textAlign: 'center',
                         color: '#ffffff',
                         textShadow: '0 0 10px #000000',
@@ -311,7 +312,6 @@ export function App() {
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '20px',
-                    margin: 'auto'
                 }}>
                 <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
                     <label htmlFor="nombre" style={{fontSize: '25px', fontWeight: 'bold', fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000' }}>Nombre:</label>
