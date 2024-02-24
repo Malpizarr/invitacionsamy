@@ -38,7 +38,57 @@ function AnimatedText({ children, style }) {
 
 
 export function App() {
+    const [nombre, setNombre] = useState('');
+    const [confirmados, setConfirmados] = useState(1);
+    const [numero, setNumero] = useState('');
+    const [codigoPais, setCodigoPais] = useState('+506'); // Predeterminado a Costa Rica
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const handleInputChange = (e) => {
+        const { id, value } = e.target;
+        switch (id) {
+            case 'nombre':
+                setNombre(value);
+                break;
+            case 'confirmados':
+                setConfirmados(value);
+                break;
+            case 'numero':
+                setNumero(value);
+                break;
+            case 'codigoPais':
+                setCodigoPais(value);
+                break;
+        }
+    };
+    const handleSubmit = async (e) => {
+        e.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+        const numeroCompleto = `${codigoPais}${numero}`; // Concatena el código de país con el número
+
+        const reservacionData = {
+            nombre,
+            confirmados,
+            numero: numeroCompleto,
+        };
+
+        try {
+            const response = await fetch('http://localhost:8080/user/CrearReservacion', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(reservacionData),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Error: ${response.statusText}`);
+            }
+
+            const result = await response.json();
+            console.log(result); // Procesa la respuesta según sea necesario
+        } catch (error) {
+            console.error('Error al enviar los datos del formulario:', error);
+        }
+    };
 
     useEffect(() => {
         function handleResize() {
@@ -188,7 +238,6 @@ export function App() {
                         height: '50%',
                         border: '50%',
                         borderRadius: '20px',
-                        boxShadow: '0 0 10px 5px #f7f0e4'
                     }}
                     allowFullScreen=""
                     loading="lazy"
@@ -245,30 +294,87 @@ export function App() {
                 backgroundImage: 'url(/assets/linda-flor-de-margarida-de-camomila-em-fundo-de-pessego-neutro-conceito-floral-minimalista-com-espac.png)',
                 backgroundSize: 'cover',
                 height: '100vh',
-                flexDirection: 'column', // Cambio clave aquí
+                flexDirection: 'column',
                 display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#d6f5d6'
             }}>
                 <h1
                     style={{
                         textAlign: 'center',
                         color: '#ffffff',
+                        textShadow: '0 0 10px #000000',
                         fontSize: responsiveFontSize('6rem', '5rem', '4rem'),
                         borderRadius: '10px',
                         fontFamily: "'Dancing Script', cursive",
-                        margin: '10px'
                     }}
                 >Confirmas?</h1>
-                <form>
-                    <div style={{marginBottom:'30px'}}>
-                        <label htmlFor="name" style={{marginRight: '10px'}}>Nombre:</label>
-                        <input type="text" id="name" name="name" placeholder="Tu nombre"/>
+                <form onSubmit={handleSubmit} style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '20px',
+                    margin: 'auto'
+                }}>
+                <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                    <label htmlFor="nombre" style={{fontSize: '25px', fontWeight: 'bold', fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000' }}>Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" value={nombre} onChange={handleInputChange}
+                           placeholder="Tu nombre"
+                           style={{padding: '10px', fontSize: '14px', borderRadius: '5px', border: '1px solid #ccc'}}/>
+                </div>
+
+                <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                    <label htmlFor="confirmados" style={{fontSize: '25px', fontWeight: 'bold' , fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000'}}>Cantidad de
+                        personas:</label>
+                    <input type="number" id="confirmados" name="confirmados" value={confirmados}
+                           onChange={handleInputChange}
+                           min="1" placeholder="1"
+                           style={{padding: '10px', fontSize: '14px', borderRadius: '5px', border: '1px solid #ccc'}}/>
+                </div>
+
+                    <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
+                        <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                            <label htmlFor="codigoPais" style={{fontSize: '20px', fontWeight: 'bold', fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000',}}>Código de
+                                País:</label>
+                            <select id="codigoPais" name="codigoPais" value={codigoPais} onChange={handleInputChange}
+                                    style={{
+                                        padding: '10px',
+                                        fontSize: '14px',
+                                        borderRadius: '5px',
+                                        border: '1px solid #ccc',
+                                    }}>
+                                <option value="+506">Costa Rica (+506)</option>
+                                <option value="+1">Estados Unidos (+1)</option>
+                            </select>
+                        </div>
+
+                        <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                            <label htmlFor="numero" style={{fontSize: '20px', fontWeight: 'bold' , fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000',}}>Número de
+                                teléfono:</label>
+                            <input type="text" id="numero" name="numero" value={numero} onChange={handleInputChange}
+                                   placeholder="Tu número de teléfono"
+                                   style={{
+                                       padding: '10px',
+                                       fontSize: '14px',
+                                       borderRadius: '5px',
+                                       border: '1px solid #ccc',
+                                       flexGrow: 1
+                                   }}/>
+                        </div>
                     </div>
-                    <div style={{margin: '10px 0'}}>
-                        <label htmlFor="people" style={{marginRight: '10px'}}>Cantidad de personas:</label>
-                        <input type="number" id="people" name="people" min="1" placeholder="1"/>
-                    </div>
-                    <button type="submit" style={{marginTop: '20px'}}>Enviar</button>
+
+
+                    <button type="submit" style={{
+                        padding: '10px',
+                        fontSize: '16px',
+                        fontWeight: 'bold',
+                        color: 'white',
+                        backgroundColor: '#c9af97',
+                        border: '#000 1px solid',
+                        borderRadius: '5px',
+                        cursor: 'pointer'
+                    }}>
+                        Enviar
+                    </button>
                 </form>
+
             </section>
             <section style={{
                 scrollSnapAlign: 'start',
@@ -288,14 +394,15 @@ export function App() {
                     flexDirection: 'column', // Cambio clave aquí
                     borderRadius: '10px',
                     textShadow: '0 0 10px #000000',
-                    fontFamily: "'Dancing Script', cursive",
-                    margin: '10px',
-                    paddingBottom: '200px'
-                }}
-                >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
-                    juntos vamos a celebrar. Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
-                    querido, es tenerte aquí conmigo.</AnimatedText>
-            </section>
-        </div>
-    );
+            fontFamily: "'Dancing Script', cursive",
+            margin: '10px',
+            paddingBottom: '200px'
+        }}
+        >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
+            juntos vamos a celebrar. Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
+            querido, es tenerte aquí conmigo.</AnimatedText>
+    </section>
+</div>
+)
+    ;
 }
