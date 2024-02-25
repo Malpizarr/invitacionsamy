@@ -53,7 +53,7 @@ function Popup({ show, onClose }) {
     };
 
     const contentStyle = {
-        backgroundColor: '#9a8278',
+        backgroundColor: '#eed3b8',
         padding: '20px',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)',
@@ -72,12 +72,13 @@ function Popup({ show, onClose }) {
         <div style={overlayStyle} onClick={onClose}>
             <div style={contentStyle} onClick={e => e.stopPropagation()}>
                 <h2 style={{textAlign: 'center', fontSize: '24px', marginBottom: '15px', fontFamily: "'Dancing Script', cursive"}}
-                >¡Te esperamos!</h2>
+                >Confirmación Exitosa ¡Te esperamos!</h2>
                 <button style={buttonStyle} onClick={onClose}>Cerrar</button>
             </div>
         </div>
     );
 }
+
 
 
 
