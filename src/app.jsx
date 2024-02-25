@@ -478,7 +478,8 @@ export function App() {
                                 fontFamily: "'Dancing Script', cursive",
                                 textShadow: '0 0 10px #000000',
                             }}>Número de
-                                teléfono:</label>
+                                teléfono:
+                            </label>
                             <input type="text" id="numero" name="numero" value={numero} onChange={handleInputChange}
                                    placeholder="Tu número de teléfono"
                                    style={{
@@ -487,7 +488,8 @@ export function App() {
                                        borderRadius: '5px',
                                        border: '1px solid #ccc',
                                        flexGrow: 1
-                                   }}/>
+                                   }}
+                            required={true}/>
                         </div>
                     </div>
 
