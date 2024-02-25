@@ -465,6 +465,5 @@ export function App() {
             querido, es tenerte aquí conmigo.</AnimatedText>
     </section>
 </div>
-)
-    ;
+);
 }
