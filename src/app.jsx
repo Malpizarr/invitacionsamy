@@ -229,6 +229,7 @@ export function App() {
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
+                    padding: '10px'
                 }}
                 >SÁBADO</AnimatedText>
                 <h2 style={{
@@ -247,6 +248,7 @@ export function App() {
                     flexDirection: 'column', // Cambio clave aquí
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
+                    padding: '10px'
                 }}
                 >4 P.M</AnimatedText>
             </section>
@@ -266,7 +268,8 @@ export function App() {
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
-                    marginBottom: '10px'
+                    marginBottom: '10px',
+                    padding: '10px'
                 }}
                 >Villa Provenza</AnimatedText>
                 <AnimatedText style={{
@@ -326,7 +329,8 @@ export function App() {
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
-                    margin: '10px'
+                    margin: '10px',
+                    padding: '10px'
                 }}>Ya que el evento será al aire libre</AnimatedText>
                 <AnimatedText style={{
                     textAlign: 'center',
