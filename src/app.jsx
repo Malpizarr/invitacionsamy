@@ -53,7 +53,7 @@ function Popup({ show, onClose }) {
     };
 
     const contentStyle = {
-        backgroundColor: '#eed3b8',
+        backgroundColor: '#b09f8e',
         padding: '20px',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)',
@@ -66,7 +66,6 @@ function Popup({ show, onClose }) {
         border: 'none',
         borderRadius: '5px',
         marginTop: '15px',
-        backgroundColor: '#c9af97',
     };
 
     return (
