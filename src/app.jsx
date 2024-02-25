@@ -53,7 +53,7 @@ function Popup({ show, onClose }) {
     };
 
     const contentStyle = {
-        backgroundColor: '#fff',
+        backgroundColor: '#9a8278',
         padding: '20px',
         borderRadius: '5px',
         boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)',
