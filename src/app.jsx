@@ -71,7 +71,7 @@ function Popup({ show, onClose }) {
     return (
         <div style={overlayStyle} onClick={onClose}>
             <div style={contentStyle} onClick={e => e.stopPropagation()}>
-                <h2 style={{textAlign: 'center', fontSize: '24px', marginBottom: '15px', fontFamily: "'Dancing Script', cursive"}}
+                <h2 style={{textAlign: 'center', fontSize: '24px', marginBottom: '15px', fontFamily: "'Dancing Script', cursive",  textShadow: '0 0 10px #000000',}}
                 >Confirmación Exitosa ¡Te esperamos!</h2>
                 <button style={buttonStyle} onClick={onClose}>Cerrar</button>
             </div>
