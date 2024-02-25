@@ -176,6 +176,15 @@ export function App() {
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
                 }}>Reserva esta fecha</AnimatedText>
+                <img src="/assets/flechaabajo.gif" style={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    left: '50%',
+                    color: '#ffffff',
+                    transform: 'translateX(-50%)',
+                    width: '75px',
+                    height: '75px'
+                }} alt="flechaAbajo"/>
             </section>
             <section style={{
                 backgroundImage: 'url("/assets/marco-flor-margarita-sobre-fondo-verde-claro_53876-101005.png")',
@@ -338,8 +347,48 @@ export function App() {
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     borderRadius: '10px',
                     fontFamily: "'Dancing Script', cursive",
-                    margin: '10px'
+                    margin: '10px',
+                    padding: '10px'
                 }}>No olvides tu abrigo</AnimatedText>
+            </section>
+            <section style={{
+                scrollSnapAlign: 'start',
+                height: '100vh',
+                display: 'flex',
+                backgroundImage: 'url(/assets/fa53756e475e2359d7b9e1f76d43acd2.jpg)',
+                backgroundSize: 'cover',
+                flexDirection: 'column', // Cambio clave aquí
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: '#f5f5f5'
+            }}>
+                <AnimatedText style={{
+                    textAlign: 'center',
+                    color: '#000000',
+                    fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
+                    flexDirection: 'column', // Cambio clave aquí
+                    borderRadius: '10px',
+                    textShadow: '0 0 10px #000000',
+                    fontFamily: "'Dancing Script', cursive",
+                    margin: '10px',
+                    paddingBottom: '40px'
+                }}
+                >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
+                    juntos vamos a celebrar. </AnimatedText>
+
+                <AnimatedText style={{
+                    textAlign: 'center',
+                    color: '#000000',
+                    fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
+                    flexDirection: 'column', // Cambio clave aquí
+                    borderRadius: '10px',
+                    textShadow: '0 0 10px #000000',
+                    fontFamily: "'Dancing Script', cursive",
+                    margin: '10px',
+                    paddingBottom: '20px'
+                }}
+                >Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
+                    querido, es tenerte aquí conmigo.</AnimatedText>
             </section>
             <section style={{
                 scrollSnapAlign: 'start',
@@ -365,25 +414,50 @@ export function App() {
                     flexDirection: 'column',
                     gap: '20px',
                 }}>
-                <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
-                    <label htmlFor="nombre" style={{fontSize: '25px', fontWeight: 'bold', fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000' }}>Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" value={nombre} onChange={handleInputChange}
-                           placeholder="Tu nombre"
-                           style={{padding: '10px', fontSize: '14px', borderRadius: '5px', border: '1px solid #ccc'}}/>
-                </div>
+                    <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                        <label htmlFor="nombre" style={{
+                            fontSize: '25px',
+                            fontWeight: 'bold',
+                            fontFamily: "'Dancing Script', cursive",
+                            textShadow: '0 0 10px #000000'
+                        }}>Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" value={nombre} onChange={handleInputChange}
+                               placeholder="Tu nombre"
+                               style={{
+                                   padding: '10px',
+                                   fontSize: '14px',
+                                   borderRadius: '5px',
+                                   border: '1px solid #ccc'
+                               }}/>
+                    </div>
 
-                <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
-                    <label htmlFor="confirmados" style={{fontSize: '25px', fontWeight: 'bold' , fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000'}}>Cantidad de
-                        personas:</label>
-                    <input type="number" id="confirmados" name="confirmados" value={confirmados}
-                           onChange={handleInputChange}
-                           min="1" placeholder="1"
-                           style={{padding: '10px', fontSize: '14px', borderRadius: '5px', border: '1px solid #ccc'}}/>
-                </div>
+                    <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                        <label htmlFor="confirmados" style={{
+                            fontSize: '25px',
+                            fontWeight: 'bold',
+                            fontFamily: "'Dancing Script', cursive",
+                            textShadow: '0 0 10px #000000'
+                        }}>Cantidad de
+                            personas:</label>
+                        <input type="number" id="confirmados" name="confirmados" value={confirmados}
+                               onChange={handleInputChange}
+                               min="1" placeholder="1"
+                               style={{
+                                   padding: '10px',
+                                   fontSize: '14px',
+                                   borderRadius: '5px',
+                                   border: '1px solid #ccc'
+                               }}/>
+                    </div>
 
                     <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
                         <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
-                            <label htmlFor="codigoPais" style={{fontSize: '20px', fontWeight: 'bold', fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000',}}>Código de
+                            <label htmlFor="codigoPais" style={{
+                                fontSize: '20px',
+                                fontWeight: 'bold',
+                                fontFamily: "'Dancing Script', cursive",
+                                textShadow: '0 0 10px #000000',
+                            }}>Código de
                                 País:</label>
                             <select id="codigoPais" name="codigoPais" value={codigoPais} onChange={handleInputChange}
                                     style={{
@@ -398,7 +472,12 @@ export function App() {
                         </div>
 
                         <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
-                            <label htmlFor="numero" style={{fontSize: '20px', fontWeight: 'bold' , fontFamily: "'Dancing Script', cursive",textShadow: '0 0 10px #000000',}}>Número de
+                            <label htmlFor="numero" style={{
+                                fontSize: '20px',
+                                fontWeight: 'bold',
+                                fontFamily: "'Dancing Script', cursive",
+                                textShadow: '0 0 10px #000000',
+                            }}>Número de
                                 teléfono:</label>
                             <input type="text" id="numero" name="numero" value={numero} onChange={handleInputChange}
                                    placeholder="Tu número de teléfono"
@@ -425,49 +504,10 @@ export function App() {
                     }}>
                         Enviar
                     </button>
-                    <Popup show={showPopup} onClose={() => setShowPopup(false)} />
+                    <Popup show={showPopup} onClose={() => setShowPopup(false)}/>
                 </form>
 
             </section>
-            <section style={{
-                scrollSnapAlign: 'start',
-                height: '100vh',
-                display: 'flex',
-                backgroundImage: 'url(/assets/fa53756e475e2359d7b9e1f76d43acd2.jpg)',
-                backgroundSize: 'cover',
-                flexDirection: 'column', // Cambio clave aquí
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: '#f5f5f5'
-            }}>
-                <AnimatedText style={{
-                    textAlign: 'center',
-                    color: '#000000',
-                    fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
-                    flexDirection: 'column', // Cambio clave aquí
-                    borderRadius: '10px',
-                    textShadow: '0 0 10px #000000',
-            fontFamily: "'Dancing Script', cursive",
-            margin: '10px',
-            paddingBottom: '40px'
-        }}
-        >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
-            juntos vamos a celebrar. </AnimatedText>
-
-                <AnimatedText style={{
-                    textAlign: 'center',
-                    color: '#000000',
-                    fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
-                    flexDirection: 'column', // Cambio clave aquí
-                    borderRadius: '10px',
-                    textShadow: '0 0 10px #000000',
-                    fontFamily: "'Dancing Script', cursive",
-                    margin: '10px',
-                    paddingBottom: '20px'
-                }}
-                >Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
-            querido, es tenerte aquí conmigo.</AnimatedText>
-    </section>
-</div>
-);
+        </div>
+    );
 }
