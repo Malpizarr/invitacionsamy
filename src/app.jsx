@@ -66,6 +66,7 @@ function Popup({ show, onClose }) {
         border: 'none',
         borderRadius: '5px',
         marginTop: '15px',
+        backgroundColor: '#c9af97',
     };
 
     return (
