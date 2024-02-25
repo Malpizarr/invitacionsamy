@@ -438,7 +438,7 @@ export function App() {
             }}>
                 <AnimatedText style={{
                     textAlign: 'center',
-                    color: '#f5f5f5',
+                    color: '#000000',
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     flexDirection: 'column', // Cambio clave aquí
                     borderRadius: '10px',
@@ -452,7 +452,7 @@ export function App() {
 
                 <AnimatedText style={{
                     textAlign: 'center',
-                    color: '#f5f5f5',
+                    color: '#000000',
                     fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
                     flexDirection: 'column', // Cambio clave aquí
                     borderRadius: '10px',
