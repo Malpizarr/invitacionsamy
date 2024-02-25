@@ -34,6 +34,50 @@ function AnimatedText({ children, style }) {
     // Combina el estilo propuesto con los estilos dinámicos
     return <h1 ref={textRef} style={style}>{children}</h1>;
 }
+function Popup({ show, onClose }) {
+    if (!show) {
+        return null;
+    }
+
+    const overlayStyle = {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        zIndex: 1000,
+    };
+
+    const contentStyle = {
+        backgroundColor: '#fff',
+        padding: '20px',
+        borderRadius: '5px',
+        boxShadow: '0 0 10px rgba(0, 0, 0, 0.25)',
+    };
+
+    const buttonStyle = {
+        padding: '10px 20px',
+        fontSize: '16px',
+        cursor: 'pointer',
+        border: 'none',
+        borderRadius: '5px',
+        marginTop: '15px',
+    };
+
+    return (
+        <div style={overlayStyle} onClick={onClose}>
+            <div style={contentStyle} onClick={e => e.stopPropagation()}>
+                <h2 style={{textAlign: 'center', fontSize: '24px', marginBottom: '15px', fontFamily: "'Dancing Script', cursive"}}
+                >¡Te esperamos!</h2>
+                <button style={buttonStyle} onClick={onClose}>Cerrar</button>
+            </div>
+        </div>
+    );
+}
 
 
 
@@ -43,6 +87,8 @@ export function App() {
     const [numero, setNumero] = useState('');
     const [codigoPais, setCodigoPais] = useState('+506'); // Predeterminado a Costa Rica
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const [showPopup, setShowPopup] = useState(false); // Estado para controlar la visibilidad del pop-up
+
     const handleInputChange = (e) => {
         const { id, value } = e.target;
         switch (id) {
@@ -84,7 +130,8 @@ export function App() {
             }
 
             const result = await response.json();
-            console.log(result); // Procesa la respuesta según sea necesario
+            console.log(result);
+            setShowPopup(true);
         } catch (error) {
             console.error('Error al enviar los datos del formulario:', error);
         }
@@ -373,6 +420,7 @@ export function App() {
                     }}>
                         Enviar
                     </button>
+                    <Popup show={showPopup} onClose={() => setShowPopup(false)} />
                 </form>
 
             </section>
