@@ -178,7 +178,7 @@ export function App() {
                 }}>Reserva esta fecha</AnimatedText>
                 <img src="/assets/flechaabajo.gif" style={{
                     position: 'absolute',
-                    bottom: '20px',
+                    bottom: '50px',
                     left: '50%',
                     color: '#ffffff',
                     transform: 'translateX(-50%)',
