@@ -208,7 +208,7 @@ export function App() {
                     marginTop: '15px',
                     fontFamily: "'Dancing Script', cursive"
                 }}>
-                    Samy Alpizar
+                    Samy Alpízar
                 </AnimatedText>
             </section>
             <section style={{
@@ -448,7 +448,20 @@ export function App() {
             paddingBottom: '200px'
         }}
         >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
-            juntos vamos a celebrar. Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
+            juntos vamos a celebrar. </AnimatedText>
+
+                <AnimatedText style={{
+                    textAlign: 'center',
+                    color: '#f5f5f5',
+                    fontSize: responsiveFontSize('6rem', '2rem', '2rem'),
+                    flexDirection: 'column', // Cambio clave aquí
+                    borderRadius: '10px',
+                    textShadow: '0 0 10px #000000',
+                    fontFamily: "'Dancing Script', cursive",
+                    margin: '10px',
+                    paddingBottom: '200px'
+                }}
+                >Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
             querido, es tenerte aquí conmigo.</AnimatedText>
     </section>
 </div>
