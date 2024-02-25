@@ -128,10 +128,10 @@ export function App() {
             if (!response.ok) {
                 throw new Error(`Error: ${response.statusText}`);
             }
-
+            setShowPopup(true);
             const result = await response.json();
             console.log(result);
-            setShowPopup(true);
+
         } catch (error) {
             console.error('Error al enviar los datos del formulario:', error);
         }
