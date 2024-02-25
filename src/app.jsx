@@ -445,7 +445,7 @@ export function App() {
                     textShadow: '0 0 10px #000000',
             fontFamily: "'Dancing Script', cursive",
             margin: '10px',
-            paddingBottom: '200px'
+            paddingBottom: '40px'
         }}
         >En este día tan especial, tu presencia es fundamental. Y si te animas a colaborar,
             juntos vamos a celebrar. </AnimatedText>
@@ -459,7 +459,7 @@ export function App() {
                     textShadow: '0 0 10px #000000',
                     fontFamily: "'Dancing Script', cursive",
                     margin: '10px',
-                    paddingBottom: '200px'
+                    paddingBottom: '20px'
                 }}
                 >Un regalito en efectivo, hará este sueño más efectivo. Pero recuerda lo más
             querido, es tenerte aquí conmigo.</AnimatedText>
