@@ -489,7 +489,7 @@ export function App() {
                                        border: '1px solid #ccc',
                                        flexGrow: 1
                                    }}
-                            required={true}/>
+                            />
                         </div>
                     </div>
 
